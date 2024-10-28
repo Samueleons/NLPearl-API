@@ -7,14 +7,23 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name="nlpearl",  # Required
-    version="1.0.0",  # Required, update this with each release
+
+    version="1.0.1",  # Required, update this with each release
+
     description="A Python wrapper for the NLPearl API",  # Optional
+
     long_description=long_description,  # Optional, from README.md
+
     long_description_content_type="text/markdown",  # Optional (see note)
+
     author="nlpearl",  # Optional
+
     author_email="support@nlpearl.ai",  # Optional
-    # url="https://github.com/yourusername/nlpearl",  # Optional, replace with actual URL
+
+    url="https://github.com/Samueleons/NLPearl-API",  # Add the GitHub repo here optional
+
     packages=find_packages(),  # Required
+
     install_requires=[
         'requests',
     ],  # Optional, add other dependencies if any
@@ -56,9 +65,11 @@ setup(
 
 
     python_requires='>=3.6, <4',  # Required, adjust as needed
-    # project_urls={  # Optional
-    #     'Bug Reports': 'https://github.com/yourusername/nlpearl/issues',
-    #     'Source': 'https://github.com/yourusername/nlpearl',
-    # },
+    project_urls={  # Optional but recommended
+        # 'Bug Reports': 'https://github.com/Samueleons/NLPearl-API/issues',
+        'Source': 'https://github.com/Samueleons/NLPearl-API',
+        'Documentation': 'https://developers.nlpearl.ai',  # Optional if you have docs
+        'Homepage': 'https://www.nlpearl.ai',  # Optional
+    },
 )
 
