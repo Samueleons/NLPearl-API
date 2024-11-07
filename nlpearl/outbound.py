@@ -4,6 +4,7 @@ import nlpearl  # Import the main module to access the global api_key
 
 API_URL = "https://api.nlpearl.ai/v1"
 
+
 class Outbound:
     @classmethod
     def get_all(cls):
@@ -76,8 +77,7 @@ class Outbound:
         return response.json()
 
     @classmethod
-    def add_lead(cls, outbound_id, first_name=None, last_name=None, email=None,
-                 phone_number=None, external_id=None):
+    def add_lead(cls, outbound_id, phone_number=None, external_id=None, call_data=None):
         """Add a lead to an outbound."""
         if nlpearl.api_key is None:
             raise ValueError("API key is not set.")
@@ -88,16 +88,13 @@ class Outbound:
         }
         url = f"{API_URL}/Outbound/{outbound_id}/Lead"
         data = {}
-        if first_name:
-            data["firstName"] = first_name
-        if last_name:
-            data["lastName"] = last_name
-        if email:
-            data["email"] = email
+
         if phone_number:
             data["phoneNumber"] = phone_number
         if external_id:
             data["externalId"] = external_id
+        if external_id:
+            data["CallData"] = call_data
 
         response = requests.put(url, headers=headers, json=data)
         response.raise_for_status()
