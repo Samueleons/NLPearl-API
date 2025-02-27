@@ -13,6 +13,5 @@ class Account:
         headers = {"Authorization": f"Bearer {nlpearl.api_key}"}
         url = f"{API_URL}/Account"
         response = requests.get(url, headers=headers)
-        response.raise_for_status()
         return response.json()
 
