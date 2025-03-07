@@ -236,3 +236,38 @@ class Outbound:
             data["sortProp"] = sort_prop
         response = requests.post(url, headers=headers, json=data)
         return response.json()
+
+    @classmethod
+    def delete_leads(cls, outbound_id, lead_ids):
+        """
+        Deletes one or more leads associated with a specific outbound campaign.
+
+        Endpoint:
+            DELETE /v1/Outbound/{outboundId}/Leads
+
+        Parameters:
+            outbound_id (str): The unique identifier of the outbound campaign.
+            lead_ids (list[str]): A list of lead IDs to be deleted.
+
+        Returns:
+            dict | str: The response from the API. If the response is in JSON format, it returns parsed JSON;
+                        otherwise, it returns the raw text.
+        """
+        if nlpearl.api_key is None:
+            raise ValueError("API key is not set.")
+
+        if not isinstance(lead_ids, list) or not lead_ids:
+            raise ValueError("lead_ids must be a non-empty list of strings.")
+
+        headers = {
+            "Authorization": f"Bearer {nlpearl.api_key}",
+            "Content-Type": "application/json"
+        }
+        url = f"{API_URL}/Outbound/{outbound_id}/Leads"
+        data = {"leadIds": lead_ids}
+
+        response = requests.delete(url, headers=headers, json=data)
+        try:
+            return response.json()
+        except ValueError:
+            return response.text
