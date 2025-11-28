@@ -7,3 +7,6 @@ from .pearl import Pearl
 
 # Global API key variable
 api_key = None
+
+# Global API version variable (default is v2)
+api_version = "v2"

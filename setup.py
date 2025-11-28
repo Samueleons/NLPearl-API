@@ -8,7 +8,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 setup(
     name="nlpearl",  # Required
 
-    version="1.0.4",  # Required, update this with each release
+    version="2.0.0",  # Required, update this with each release
 
     description="A Python wrapper for the NLPearl API",  # Optional
 

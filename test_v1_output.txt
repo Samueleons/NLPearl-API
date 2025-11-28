@@ -1,0 +1,125 @@
+============================================================
+NLPearl API V1 - Complete Usage Example
+============================================================
+API Version: v1
+API URL: https://api.nlpearl.ai/v1
+============================================================
+
+### 1. ACCOUNT ###
+------------------------------------------------------------
+
+[1.1] Get Account
+[ERROR] Expecting value: line 1 column 1 (char 0)
+
+### 2. CALL OPERATIONS ###
+------------------------------------------------------------
+
+[2.1] Get Call
+>> Uncomment code above and set call_id to test
+
+[2.2] Delete Calls
+>> Uncomment code above and set call_ids to test
+
+### 3. INBOUND OPERATIONS ###
+------------------------------------------------------------
+
+[3.1] Get All Inbounds
+[ERROR] Error: Expecting value: line 1 column 1 (char 0)
+
+[3.2] Get Specific Inbound
+>> Uncomment code above and set inbound_id to test
+
+[3.3] Set Inbound Active/Inactive
+>> Uncomment code above and set inbound_id to test
+
+[3.4] Get Inbound Ongoing Calls
+>> Uncomment code above and set inbound_id to test
+
+[3.5] Search Inbound Calls
+>> Uncomment code above and set inbound_id to test
+
+[3.6] Get Inbound Analytics
+>> Uncomment code above and set inbound_id to test
+
+### 4. OUTBOUND OPERATIONS ###
+------------------------------------------------------------
+
+[4.1] Get All Outbounds
+[ERROR] Error: Expecting value: line 1 column 1 (char 0)
+
+[4.2] Get Specific Outbound
+>> Uncomment code above and set outbound_id to test
+
+[4.3] Set Outbound Active/Inactive
+>> Uncomment code above and set outbound_id to test
+
+[4.4] Get Outbound Calls
+>> Uncomment code above and set outbound_id to test
+
+[4.5] Get Outbound Analytics
+>> Uncomment code above and set outbound_id to test
+
+### 5. LEAD MANAGEMENT ###
+------------------------------------------------------------
+
+[5.1] Add Lead
+>> Uncomment code above and set outbound_id to test
+
+[5.2] Get Lead by ID
+>> Uncomment code above and set outbound_id and lead_id to test
+
+[5.3] Get Lead by External ID
+>> Uncomment code above and set outbound_id and external_id to test
+
+[5.4] Get Lead by Phone Number
+>> Uncomment code above and set outbound_id and phone_number to test
+
+[5.5] Update Lead
+>> Uncomment code above and set outbound_id and lead_id to test
+
+[5.6] Search Leads
+>> Uncomment code above and set outbound_id to test
+
+[5.7] Delete Leads
+>> Uncomment code above and set outbound_id and lead_ids to test
+
+[5.8] Delete Leads by External ID
+>> Uncomment code above and set outbound_id and external_ids to test
+
+### 6. OUTBOUND CALLING (V1 ONLY) ###
+------------------------------------------------------------
+
+[6.1] Make Call
+>> Uncomment code above and set outbound_id to test
+
+[6.2] Get Call Request
+>> Uncomment code above and set request_id to test
+
+[6.3] Search Call Requests
+>> Uncomment code above and set outbound_id to test
+
+### 7. PEARL / MEMORY MANAGEMENT ###
+------------------------------------------------------------
+
+[7.1] Reset Customer Memory
+>> Uncomment code above and set pearl_id and phone_number to test
+
+============================================================
+V1 API Testing Complete!
+============================================================
+
+Endpoints Tested:
+  1. Account: get_account()
+  2. Call: get_call(), delete_calls()
+  3. Inbound: get_all(), get(), set_active(), get_calls(),
+              get_ongoing_calls(), get_analytics()
+  4. Outbound: get_all(), get(), set_active(), get_calls(),
+               get_analytics()
+  5. Leads: add_lead(), get_lead_by_id(), get_lead_by_external_id(),
+            get_lead_by_phone_number(), update_lead(), get_leads(),
+            delete_leads(), delete_leads_by_external_id()
+  6. Calling: make_call(), get_call_request(), get_call_requests()
+  7. Memory: reset_customer_memory()
+
+Total: 24+ endpoints
+============================================================

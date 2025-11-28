@@ -1,5 +1,16 @@
 import re
 from datetime import datetime, date
+import nlpearl  # To access api_version
+
+
+def _get_api_url():
+    """
+    Returns the API URL based on the current api_version setting.
+    Defaults to v2 if api_version is not set.
+    """
+    version = getattr(nlpearl, 'api_version', 'v2') or 'v2'
+    return f"https://api.nlpearl.ai/{version}"
+
 
 def _process_date(date_val):
     """
@@ -20,3 +31,18 @@ def _process_date(date_val):
         return date_val.isoformat(timespec='milliseconds') + "Z"
     else:
         raise TypeError("The date value must be either a string or a datetime/date object.")
+
+
+def _date_diff_in_days(from_date, to_date):
+    """
+    Returns the number of days between from_date and to_date.
+
+    Both can be either datetime, date, or ISO 8601 strings (with or without 'Z').
+    """
+    if isinstance(from_date, str):
+        from_date = datetime.fromisoformat(from_date.replace("Z", "+00:00"))
+
+    if isinstance(to_date, str):
+        to_date = datetime.fromisoformat(to_date.replace("Z", "+00:00"))
+
+    return (to_date - from_date).days

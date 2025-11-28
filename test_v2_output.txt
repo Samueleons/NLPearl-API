@@ -1,0 +1,133 @@
+============================================================
+NLPearl API V2 - Complete Usage Example
+============================================================
+API Version: v2
+API URL: https://api.nlpearl.ai/v2
+============================================================
+
+### 1. ACCOUNT ###
+------------------------------------------------------------
+
+[1.1] Get Account
+[ERROR] Error: Expecting value: line 1 column 1 (char 0)
+
+### 2. CALL OPERATIONS ###
+------------------------------------------------------------
+
+[2.1] Get Call
+>> Uncomment code above and set call_id to test
+
+[2.2] Delete Calls
+>> Uncomment code above and set call_ids to test
+
+### 3. PEARL OPERATIONS (V2 ONLY) ###
+------------------------------------------------------------
+
+[3.1] Get All Pearls
+[ERROR] Error: Expecting value: line 1 column 1 (char 0)
+
+[3.2] Get Specific Pearl
+>> Uncomment code above and set pearl_id to test
+
+[3.3] Set Pearl Active/Inactive
+>> Uncomment code above and set pearl_id to test
+
+[3.4] Get Pearl Ongoing Calls
+>> Uncomment code above and set pearl_id to test
+
+[3.5] Get Pearl Calls
+>> Uncomment code above and set pearl_id to test
+
+[3.6] Get Pearl Analytics
+>> Uncomment code above and set pearl_id to test
+
+### 4. LEAD MANAGEMENT (V2) ###
+------------------------------------------------------------
+
+[4.1] Add Lead
+>> Uncomment code above and set pearl_id to test
+
+[4.2] Get Lead by ID
+>> Uncomment code above and set pearl_id and lead_id to test
+
+[4.3] Get Lead by External ID
+>> Uncomment code above and set pearl_id and external_id to test
+
+[4.4] Get Lead by Phone Number
+>> Uncomment code above and set pearl_id and phone_number to test
+
+[4.5] Update Lead
+>> Uncomment code above and set pearl_id and lead_id to test
+
+[4.6] Search Leads
+>> Uncomment code above and set pearl_id to test
+
+[4.7] Delete Leads by ID
+>> Uncomment code above and set pearl_id and lead_ids to test
+
+[4.8] Delete Leads by External ID
+>> Uncomment code above and set pearl_id and external_ids to test
+
+### 5. MEMORY MANAGEMENT ###
+------------------------------------------------------------
+
+[5.1] Reset Customer Memory
+>> Uncomment code above and set pearl_id and phone_number to test
+
+[5.2] Reset Customer Memory (Alternative)
+>> Uncomment code above and set pearl_id and phone_number to test
+
+============================================================
+V2 API Testing Complete!
+============================================================
+
+Endpoints Tested:
+  1. Account: get_account()
+  2. Call: get_call(), delete_calls()
+  3. Pearl: get_all(), get(), set_active(), get_calls(),
+            get_ongoing_calls(), get_analytics()
+  4. Leads: add_lead(), get_lead_by_id(), get_lead_by_external_id(),
+            get_lead_by_phone_number(), update_lead(), get_leads(),
+            delete_leads(), delete_leads_by_external_id()
+  5. Memory: reset_memory(), reset_customer_memory()
+
+Total: 17 endpoints
+
+Key V2 Features:
+  - Unified Pearl entity (replaces Inbound/Outbound separation)
+  - Uses pearl_id instead of outbound_id/inbound_id
+  - Enhanced analytics with call type information
+  - Sentiment analysis included
+  - Pickup rate timeline for outbound campaigns
+============================================================
+
+### V2 vs V1 KEY DIFFERENCES ###
+------------------------------------------------------------
+1. ID Parameter:
+   V1: outbound_id / inbound_id
+   V2: pearl_id
+
+2. Pearl Entity:
+   V1: Separate Inbound and Outbound classes
+   V2: Unified Pearl class
+
+3. Lead Operations:
+   V1: pearl.Outbound.add_lead(outbound_id, ...)
+   V2: pearl.Outbound.add_lead(pearl_id, ...)
+
+4. Analytics:
+   V1: pearl.Outbound.get_analytics(outbound_id, ...)
+   V2: pearl.Pearl.get_analytics(pearl_id, ...)
+
+5. Not Available in V2:
+   - Inbound.get_all() >> Use Pearl.get_all()
+   - Outbound.get_all() >> Use Pearl.get_all()
+   - Outbound.make_call() >> Different mechanism
+   - Outbound.get_call_requests() >> Not in V2
+
+6. New in V2:
+   - Pearl.get_all() - Get all pearls (inbound + outbound)
+   - Pearl.get_analytics() - Unified analytics
+   - Enhanced sentiment analysis
+   - Call type information in analytics
+============================================================
