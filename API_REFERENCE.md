@@ -6,7 +6,7 @@
 ```python
 import nlpearl as pearl
 
-pearl.api_key = "your_api_key"
+pearl.api_key = "account_id:secret_key"
 pearl.api_version = "v2"  # or "v1"
 ```
 

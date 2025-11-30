@@ -434,10 +434,10 @@ BSD 3-Clause License - see [LICENSE](LICENSE) file for details.
 
 - **Support**: [support@nlpearl.ai](mailto:support@nlpearl.ai)
 - **Documentation**: This README
-- **API Key**: Contact [samuel@nlpearl.ai](mailto:samuel@nlpearl.ai)
+- **API Key**: Contact [support@nlpearl.ai](mailto:samuel@nlpearl.ai)
 
 ---
 
-**Version**: 1.0.7  
+**Version**: 2.0.0
 **Python**: 3.6+  
 **API Versions**: V1 and V2 supported
